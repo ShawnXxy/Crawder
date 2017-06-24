@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created on 2017/5/21.
  */
-public class test implements PageProcessor {
+public class spider implements PageProcessor {
     // 设置编码 ，超时时间，重试次数，
     private Site site = Site.me().setRetryTimes(10).setSleepTime(5000).setTimeOut(5000)
             .addCookie("www.zhihu.com", "unlock_ticket", "QUJBTXRpWGJRd2dYQUFBQVlRSlZUZl83Q2xjZkJISHZkZm13R05Jck93eTNFU2IyUE53LWVnPT0=|"
@@ -73,7 +73,7 @@ public class test implements PageProcessor {
     public static void main(String[] args) {
         String answerUrl =  "https://www.zhihu.com/question/27761934/answer/164790050";
         System.out.println("Test initiating...");
-        Spider.create(new test()).addUrl(answerUrl).thread(1).run();
+        Spider.create(new spider()).addUrl(answerUrl).thread(1).run();
 
     }
 
